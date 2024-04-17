@@ -279,6 +279,9 @@ let
       edgePort = 3001;
       networkConfig = import ./private-config.nix;
       usePeersFromLedgerAfterSlot = 10007987;
+      extraDbSyncConfig = {
+        enableConway = true;
+      };
     };
   };
 
