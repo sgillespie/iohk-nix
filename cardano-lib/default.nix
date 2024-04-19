@@ -93,7 +93,7 @@ let
   mkDbSyncConfig = name: nodeConfig: dbSyncConfig:
     mkExplorerConfig name nodeConfig // defaultExplorerLogConfig // {
       # dbsync config not part of node config
-      enable_conway = dbSyncConfig.enableConway or false;
+      EnableFutureGenesis = dbSyncConfig.enableFutureGenesis or false;
     };
 
   mkMithrilSignerConfig = name: env: {
@@ -258,7 +258,7 @@ let
       networkConfig = import ./sanchonet-config.nix;
       usePeersFromLedgerAfterSlot = 21599922;
       extraDbSyncConfig = {
-        enableConway = true;
+        enableFutureGenesis = true;
       };
     };
 
@@ -280,7 +280,7 @@ let
       networkConfig = import ./private-config.nix;
       usePeersFromLedgerAfterSlot = 10007987;
       extraDbSyncConfig = {
-        enableConway = true;
+        enableFutureGenesis = true;
       };
     };
   };
